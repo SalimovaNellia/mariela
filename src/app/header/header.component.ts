@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  burgerReleased: boolean = false;
+
+  constructor() {
+
+  }
 
   ngOnInit() {
   }
 
+  toggleMenu() {
+    this.burgerReleased = !this.burgerReleased;
+  }
 }

@@ -1,3 +1,27 @@
 <div class="container">
+  <div class="header-content">
+    <a href="" class="logo"><img src="../../assets/logo.png" alt=""></a>
 
+
+    <div class="header-menu">
+      <div class="header-menu__burger" id="menu-burger" [class.active]="burgerReleased" (click)="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <nav class="menu-list" id="menu-list" [class.open]="burgerReleased">
+        <li><a href="" class="menu-link">Home</a></li>
+        <li><a href="" class="menu-link">About me</a></li>
+        <li><a href="" class="menu-link">Products</a></li>
+        <li><a href="" class="menu-link">Contact me</a></li>
+      </nav>
+    </div>
+
+
+    <div class="basket">
+      <span class="basket__icon"></span>
+      <span class="basket__amount">23</span>
+    </div>
+  </div>
 </div>
