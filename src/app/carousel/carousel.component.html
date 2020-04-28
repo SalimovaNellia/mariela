@@ -1,0 +1,22 @@
+<div class="slider ">
+  <div class="slide" *ngFor="let slide of slides; let i = index" >
+    <img  src="{{slide.imgUrl}}"
+          *ngIf="i === currentSlide"
+          alt=""
+          class="slide__img"
+          @carouselAnimation>
+    <div class="slide-info"
+         *ngIf="i === currentSlide"
+         @carouselAnimation>
+      <p class="slide-info__tag">{{slide.slideDetails.tag}}</p>
+      <h2 class="slide-info__title">{{slide.slideDetails.title}}</h2>
+      <a href="{{slide.slideDetails.linkHref}}" class="slide-info__link">{{slide.slideDetails.linkTitle}}</a>
+    </div>
+  </div>
+  <div class="slider-navigation">
+    <button class="btn-left"
+            (click)="onPreviousClick()"><img src="../../assets/arrow.svg" alt=""></button>
+    <button class="btn-right"
+            (click)="onNextClick()"><img src="../../assets/arrow.svg" alt=""></button>
+  </div>
+</div>
