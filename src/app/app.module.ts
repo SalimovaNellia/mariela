@@ -8,6 +8,11 @@ import { HomeSliderComponent } from './home-slider/home-slider.component';
 import { CarouselComponent } from './carousel/carousel.component';
 
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ContactsComponent } from './contacts/contacts.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+
+export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
 
 @NgModule({
@@ -15,14 +20,18 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     AppComponent,
     HeaderComponent,
     HomeSliderComponent,
-    CarouselComponent
+    CarouselComponent,
+    ContactsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgxMaskModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

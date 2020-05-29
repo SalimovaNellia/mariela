@@ -1,0 +1,84 @@
+<div class="contacts-wrap">
+  <div class="container">
+    <div class="contacts-content">
+      <div class="contacts-info">
+        <p class="contact-name">EMAIL</p>
+        <a class="contact" href = "mailto: support@website.com">support@website.com</a>
+
+        <p class="contact-name">PHONE</p>
+        <a class="contact" href = "tel: 800-123-456">800-123-456</a>
+
+        <p class="contact-name">ADDRESS</p>
+        <p class="contact" >23 Evergreen Street, <br> San Francisco, California <br> USA</p>
+      </div>
+      <div class="contact-right">
+        <p class="contact-name">ADDRESS</p>
+        <p class="contact-subtitle">Drop us your message and I'll get back to you as soon as possible.</p>
+        <form action=""
+              class="contact-form"
+              [formGroup]="contactForm"
+              (ngSubmit)="sendContacts()">
+          <div class="input-wrapper">
+            <input type="text"
+                   id="name"
+                   placeholder="your name"
+                   formControlName="name">
+            <div class="invalid-feedback"
+                 *ngIf="submitted && f.name.errors">
+              <p *ngIf="f.name.errors.required">*Name is required</p>
+            </div>
+          </div>
+
+          <div class="input-wrapper">
+            <input type="text"
+                   id="company"
+                   placeholder="your company"
+                   formControlName="companyName">
+            <div class="invalid-feedback"
+                 *ngIf="submitted && f.companyName.errors">
+              <p *ngIf="f.companyName.errors.required">*Company name is required</p>
+            </div>
+          </div>
+
+          <div class="input-wrapper">
+            <input type="tel"
+                   id="phone"
+                   placeholder="your phone"
+                   formControlName="phone"
+                   mask="(000) 000 00 00">
+            <div class="invalid-feedback"
+                 *ngIf="submitted && f.phone.errors">
+              <p *ngIf="f.phone.errors.required">*Phone is required</p>
+            </div>
+          </div>
+
+          <div class="input-wrapper">
+            <input type="text"
+                   id="email"
+                   placeholder="your email"
+                   formControlName="email">
+            <div class="invalid-feedback"
+                 *ngIf="submitted && f.email.errors">
+              <p *ngIf="f.email.errors.required">*Email is required</p>
+              <p *ngIf="f.email.errors.pattern">* Invalid email address</p>
+            </div>
+          </div>
+
+          <textarea id="message"
+                    name="story"
+                    rows="5"
+                    cols="33"
+                    placeholder="your message"
+                    formControlName="message">
+          </textarea>
+          <div class="invalid-feedback invalid-feedback--message"
+               *ngIf="submitted && f.message.errors">
+            <p *ngIf="f.message.errors.required">*Tell me more</p>
+          </div>
+          <button type="submit"
+                  class="btn rect-btn">Let's talk</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
